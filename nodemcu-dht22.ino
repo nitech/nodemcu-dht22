@@ -28,7 +28,7 @@ DHT dht(DHTPIN, DHTTYPE);
 namespace{
   const char * AP_NAME = "Sensor AP"; // Assigns your Access Point name
   const char * MQTT_SERVER = "things.ubidots.com"; 
-  const char * TOKEN = "A1E-uj4jYAOzngZrIChFWUISFjJUbFJYYH"; // Assigns your Ubidots TOKEN
+  const char * TOKEN = "your-token-here"; // Assigns your Ubidots TOKEN
   const char * DEVICE_LABEL = "temptastic"; // Assigns your Device Label
   const char * VARIABLE_LABEL = "fuktighet"; // Assigns your Variable Label
   int SENSOR = A0;
