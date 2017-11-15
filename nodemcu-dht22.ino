@@ -26,7 +26,7 @@ DHT dht(DHTPIN, DHTTYPE);
  ****************************************/
  
 namespace{
-  const char * AP_NAME = "Temptastic AP"; // Assigns your Access Point name
+  const char * AP_NAME = "Sensor AP"; // Assigns your Access Point name
   const char * MQTT_SERVER = "things.ubidots.com"; 
   const char * TOKEN = "A1E-uj4jYAOzngZrIChFWUISFjJUbFJYYH"; // Assigns your Ubidots TOKEN
   const char * DEVICE_LABEL = "temptastic"; // Assigns your Device Label
@@ -162,11 +162,15 @@ void loop() {
   Serial.println(" *C ");
 
   /* fuktighet */
-  sprintf(payload, "{\"%s\": \"%d\"}", "fuktighet", h);
+  String humidity = String(h);
+  sprintf(payload, "{\"%s\": %s}", "fuktighet", humidity.c_str());
+  // Serial.println(payload);
   client.publish(topic, payload);
 
   /* temperatur */
-  sprintf(payload, "{\"%s\": \"%d\"}", "temperatur", t);
+  String temperature = String(t);
+  sprintf(payload, "{\"%s\": %s}", "temperatur", temperature.c_str());
+  // Serial.println(payload);
   client.publish(topic, payload);
 
 
